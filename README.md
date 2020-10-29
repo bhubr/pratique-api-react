@@ -154,3 +154,10 @@ axios
     // data contient les données renvoyées par l'API
   });
 ```
+
+Dans le 2ème `.then`, à la place du commentaire, il va falloir utiliser `this.setState` pour mettre à jour `photos` dans le state, à partir des données reçues.
+
+Ensuite, vous pouvez ajouter un bouton dans le JSX renvoyé par votre `render` :
+
+- Lui mettre un attribut `type="button"`.
+- Faire en sorte que sur un clic sur le bouton, `this.fetchPhotos` soit appelé.
