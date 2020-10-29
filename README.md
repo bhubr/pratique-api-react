@@ -115,3 +115,42 @@ const samplePhotos = [
 ```
 
 Puis utilisez `map` sur ce tableau pour répéter le composant `PhotoCard`.
+
+## 3. Se préparer pour faire des appels API
+
+Il va d'abord falloir transformer le composant `App` en classe !
+
+Puis lui ajouter un constructeur, et y initialiser un state :
+
+```javascript
+this.state = {
+  photos: [],
+};
+```
+
+Ensuite, ajouter une méthode `fetchPhotos` : cette méthode va faire un appel à l'API.
+
+Vous pouvez utiliser soit Fetch, soit Axios comme dans la quête React 07.
+
+Si vous utilisez Fetch :
+
+```javascript
+const url = 'https://mytravelapi.herokuapp.com/photos';
+fetch(url)
+  .then((response) => response.json())
+  .then((data) => {
+    // data contient les données renvoyées par l'API
+  });
+```
+
+Si vous utilisez Axios :
+
+```javascript
+const url = 'https://mytravelapi.herokuapp.com/photos';
+axios
+  .get(url)
+  .then((response) => response.data)
+  .then((data) => {
+    // data contient les données renvoyées par l'API
+  });
+```
